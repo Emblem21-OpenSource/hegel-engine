@@ -1,0 +1,25 @@
+{
+  "name": "hegel-engine",
+  "version": "1.0.0",
+  "description": "Simulates the evolution of corruption for Universal Basic Income strategies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/ava test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emblem21-OpenSource/HegelEngine-Engine.git"
+  },
+  "keywords": [
+    "ubi"
+  ],
+  "author": "Patrick Ryan <patrick.ryan@emblem21.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Emblem21-OpenSource/HegelEngine-Engine/issues"
+  },
+  "homepage": "https://github.com/Emblem21-OpenSource/HegelEngine-Engine#readme",
+  "devDependencies": {
+    "ava": "^1.4.1"
+  }
+}
