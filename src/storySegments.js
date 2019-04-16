@@ -23,16 +23,25 @@ const pronouns = {
 }
 
 module.exports = {
+  arcs: {
+    monsterHunt: ['#hopes# #failures# #retreats# #improvements# #triumphs#'],
+    ragsToRiches: ['#triumphs# #mistakes# #failures# #plots# #gripes# #triumphs# #improvements#'],
+    quest: [ '#hopes# #plots# #mistakes# #evasions# #retreats# #triumphs#' ],
+    voyageAndReturn: [ '#hopes# #plots# #mistakes# #evasions# #retreats# #improvements#' ],
+    comedy: [ '#failures# #retreats# #gripes# #evasions# #mistakes# #triumphs#' ],
+    tragedy: [ '#hopes# #plots# #improvements# #triumphs# #retreats# #failures#' ],
+    rebirth: [ '#failures# #retreats# #gripes# #evasions# #mistakes# #improvements# #triumphs#' ]
+  },
   words: {
     // Verbs
-    thought: [ 'assumed', 'considered', 'determined', 'expected', 'guessed', 'judged', 'realized', 'understood', 'deemed', 'envisioned', 'estimated', 'imagined', 'regarded', 'surmised', 'suspected', 'believed', 'knew', 'recognized', 'deduced', 'concluded', 'hypothesized', 'infered', 'thought' ],
+    thought: [ 'assumed', 'considered', 'determined', 'expected', 'guessed', 'judged', 'realized', 'understood', 'envisioned', 'estimated', 'imagined', 'surmised', 'suspected', 'believed', 'knew', 'recognized', 'deduced', 'concluded', 'hypothesized', 'inferred', 'thought' ],
     informed: [ 'informed', 'advised', 'educated', 'instructed', 'notified', 'told', 'warned', 'enlightened' ],
     entertained: [ 'entertained', 'delighted', 'pleased', 'satisfied' ],
-    acted: [ 'acted', 'carried out', 'executed', 'performed' ],
+    acted: [ 'acted', 'executed', 'performed', 'functioned', 'operated', 'behaved', 'presented' ],
     attacked: [ 'attacked', 'assailed', 'fought', 'struck' ],
     defended: [ 'defended', 'guarded', 'protected', 'preserved', 'secured' ],
     evaded: [ 'evaded', 'avoided', 'bypassed', 'circumvented', 'dodged' ],
-    retreated: [ 'retreated', 'abandoned', 'backed off', 'escaped', 'left', 'pulled out of', 'withdrew' ],
+    retreated: [ 'retreated', 'backed off', 'escaped', 'evacuated', 'left', 'pulled out', 'withdrew' ],
     trapped: [ 'trapped', 'captured', 'cornered', 'conned', 'duped', 'fooled', 'lured' ],
     defeated: [ 'defeated', 'conquered', 'crushed', 'beaten' ],
     suffered: [ 'suffered' ],
@@ -55,13 +64,13 @@ module.exports = {
     questioned: [ 'questioned', 'challenged', 'examined', 'interrogated', 'interviewed', 'investigated' ],
 
     // Adverbs
-    perfectly: [ 'perfectly', 'thoroughly', 'totally', 'completely', 'entirely', 'fully' ],
+    perfectly: [ 'perfectly', 'thoroughly', 'successfully', 'totally', 'completely', 'entirely', 'fully' ],
     decently: [ 'decently', 'accurately', 'correctly', 'honestly', 'properly', 'reasonably' ],
     poorly: [ 'poorly', 'badly', 'crudely', 'inadequately', 'insufficiently' ],
     miserably: [ 'miserably', 'terribly', 'dreadfully', 'awkwardly' ],
     intelligently: [ 'intelligently', 'prudently', 'sensibly', 'skillfully', 'wisely' ],
 
-    curiously: [ 'curiously', 'strangely', 'surprinsingly', 'remarkably' ],
+    curiously: [ 'curiously', 'strangely', 'surprisingly', 'remarkably' ],
     viciously: [ 'viciously', 'brutally', 'maliciously', 'cruelly' ],
     calmly: [ 'calmly', 'coolly', 'easily', 'peacefully', 'smoothly' ],
     vigorously: [ 'vigorously', 'actively', 'boldly', 'eagerly', 'firmly', 'forcefully' ],
@@ -73,177 +82,204 @@ module.exports = {
     decent: [ 'decent', 'good', 'correct', 'honest', 'proper', 'modest' ],
     poor: [ 'poor', 'bad', 'crude', 'inadequate', 'insufficient', 'feeble' ],
     miserable: [ 'miserable', 'terrible', 'dreadful', 'pathetic', 'tragic' ],
-    barely: [ 'barely', 'hardly', 'only just' ],
+    barely: [ 'barely', 'hardly', ],
 
-    curious: [ 'curious', 'strange', 'surprinsing', 'remarkable' ],
+    curious: [ 'curious', 'strange', 'surprising', 'remarkable' ],
     vicious: [ 'vicious', 'brutal', 'malicious', 'cruel' ],
     calm: [ 'calm', 'cool', 'peaceful', 'serene' ],
     vigorous: [ 'vigorous', 'active', 'bold', 'eager' ],
     humorous: [ 'humorous', 'amusing', 'absurd' ],
 
     // Nouns
+    almost: [ 'almost', 'practically', 'essentially' ],
+    continued: [ 'was left', 'continued', 'remained' ],
+    option: [ 'option', 'alternative', 'opportunity', 'choice' ],
+    scenario: [ 'scenario', 'situation', 'problem', 'condition', 'position' ],
+    held: [ 'held', 'protected', 'defended', 'guarded' ],
+    ground: [ 'ground', 'stance', 'position', 'perspective', 'turf' ],
+    conserved: [ 'conserved', 'moderated', 'restricted', 'reallocated', 'kept' ],
+    resources: [ 'resources', 'assets', 'goods', 'capital', 'reputation', 'property', 'reserves', 'holdings' ],
+    about: [ 'about' ],
+    focus: [ 'focus', 'target', 'attention', 'concentration' ],
+    concerns: [ 'concerns', 'apprehension', 'anxiety', 'unease', 'worry' ],
+    flaws: [ 'flaws', 'blemishes', 'defects', 'failings', 'faults', 'weaknesses' ],
+    peers: [ 'peers', 'associates', 'companions', 'equals', 'friends' ],
+    anything: [ 'anything' ],
+    useful: [ 'useful', 'adventageous', 'favorable', 'helpful', 'convenient' ],
+    many: [ 'many' ],
+    dream: [ 'dream', 'fantasy', 'idea', 'vision', 'goal', 'wish', 'hope', 'aspiration', 'ambition' ],
+    outcomes: [ 'outcomes', 'conclusions', 'results', 'reactions' ],
+    find: [ 'find', 'discover', 'detect', 'identify', 'locate' ],
+    way: [ 'way', 'path', 'trick', 'tactic' ],
+    beat: [ 'beat', 'defeat', 'rout', 'breakdown', 'drive off' ],
+    intentions: [ 'intentions', 'purpose', 'aims', 'goals', 'motives', 'objectives', 'plans' ],
+    felt: [ 'felt' ],
+    worst: [ 'worst', 'calamity', 'catastrophe' ],
+    powerful: [ 'powerful', 'effective', 'capable', 'talented', 'experienced', 'adaptive', 'influential', 'persuasive' ],
+    recovered: [ 'recovered', 'rebounded', 'rallied' ],
+    slightly: [ 'slightly', 'somewhat', 'marginally' ],
     places: [ 'outskirts', 'slums', 'district', 'street', 'road', 'stop', 'checkpoint', 'station', 'house', 'apartment', 'office', 'school', 'hospital', 'market', 'store', 'hotel', 'factory', 'plant', 'detention', 'gallery', 'zoo', 'concert', 'restaurant', 'cafeteria', 'cafe', 'bar', 'clinic', 'fitness center' ],
   },
   types: {
     triumphs: {
       extreme: [
-        '#heroName# #vigorously# #attacked# and #acted# #perfectly#.'
+        '#heroTitle# #vigorously# #attacked# and #acted# #perfectly#.'
       ],
       greater: [
-        '#heroName# had #acted# #perfectly#.'
+        '#heroTitle# had #acted# #perfectly#.'
       ],
       normal: [
-        '#heroName# had #acted# #decently#.'
+        '#heroTitle# had #acted# #decently#.'
       ],
       lesser: [
-        '#heroName# had #acted# #poorly#.'
+        '#heroTitle# had #acted# #poorly#.'
       ],
       barely: [
-        '#heroName# had #barely# #acted# and almost #surrendered#.'
+        '#heroTitle# had #barely# #acted# and #almost# #surrendered#.'
       ]
     },
 
     failures: {
       extreme: [
-        '#heroName# #vigorously# #acted# and was #perfectly# #defeated#.'
+        '#heroTitle# #vigorously# #acted# and was #perfectly# #defeated#.'
       ],
       greater: [
-        '#heroName# was #perfectly# #defeated#.'
+        '#heroTitle# was #perfectly# #defeated#.'
       ],
       normal: [
-        '#heroName# was #vigorously# #defeated#.'
+        '#heroTitle# was #vigorously# #defeated#.'
       ],
       lesser: [
-        '#heroName# was #defeated#.'
+        '#heroTitle# was #defeated#.'
       ],
       barely: [
-        '#heroName# was #barely# #defeated#.'
+        '#heroTitle# was #barely# #defeated#.'
       ]
     },
 
     retreats: {
       extreme: [
-        '#heroName# was left with no option and #complete# #retreated#.'
+        '#heroTitle# #continued# with no #option# and #perfectly# #retreated#.'
       ],
       greater: [
-        '#heroName# #vigorously# #retreated# the scenario.'
+        '#heroTitle# #vigorously# #retreated# from the #scenario#.'
       ],
       normal: [
-        '#heroName# #retreated#.'
+        '#heroTitle# #retreated#.'
       ],
       lesser: [
-        '#heroName# held #heroPossessive# ground #decently#, but #retreated#.'
+        '#heroTitle# #held# #heroPossessive# #ground# #decently#, but #retreated#.'
       ],
       barely: [
-        '#heroName# conserved #heroPossessive# resources and #intelligently# #retreated#.'
+        '#heroTitle# #conserved# #heroPossessive# #resources# and #intelligently# #retreated#.'
       ]
     },
 
     gripes: {
       extreme: [
-        '#heroName# #viciously# #complained# and #hated# #villianName#.'
+        '#heroTitle# #viciously# #complained# and #hated# #villianName#.'
       ],
       greater: [
-        '#heroName# #viciously# #complained# about #villianName#.'
+        '#heroTitle# #viciously# #complained# #about# #villianName#.'
       ],
       normal: [
-        '#heroName# #complained# about #villianName#.'
+        '#heroTitle# #complained# #about# #villianName#.'
       ],
       lesser: [
-        '#heroName# #complained#, but kept #heroPossessive# focus on #villianName#.'
+        '#heroTitle# #complained#, but #conserved# #heroPossessive# #focus# on #villianName#.'
       ],
       barely: [
-        '#heroName# #barely# #complained# about #heroPossessive# concerns for #villianName#.'
+        '#heroTitle# #barely# #complained# #about# #heroPossessive# #concerns# for #villianName#.'
       ]
     },
 
     plots: {
       extreme: [
-        '#heroName# #thought# #villianName# was #poor# and #learned# about #villianName#\'s #curious# flaws.'
+        '#heroTitle# #thought# #villianName# was #poor# and #learned# #villianName#\'s #curious# #flaws#.'
       ],
       greater: [
-        '#heroName# #discussed# with #heroPossessive# peers about the #villianName# situation.'
+        '#heroTitle# #discussed# with #heroPossessive# #peers# #about# the #villianName# #scenario#.'
       ],
       normal: [
-        '#heroName# #thought# about the problem.'
+        '#heroTitle# #thought# #about# the #problem#.'
       ],
       lesser: [
-        '#heroName# #questioned# #villianName#.'
+        '#heroTitle# #questioned# #villianName#.'
       ],
       barely: [
-        '#heroName# #barely# #thought# anything useful about #villianName#.'
+        '#heroTitle# #barely# #thought# #anything# #useful# #about# #villianName#.'
       ]
     },
 
     hopes: {
       extreme: [
-        '#heroName# #attracted# many with #heroPossessive# dream and was #seduced# by its #perfect# outcomes.'
+        '#heroTitle# #attracted# #many# with #heroPossessive# #dream# and was #seduced# by its #perfect# #outcomes#.'
       ],
       greater: [
-        '#heroName# was #seduced# by #heroPossessive# #perfect# vision.'
+        '#heroTitle# was #seduced# by #heroPossessive# #perfect# #dream#.'
       ],
       normal: [
-        '#heroName# was #seduced# by what #heroPersonal# #thought#.'
+        '#heroTitle# was #seduced# by what #heroPersonal# #thought#.'
       ],
       lesser: [
-        '#heroName# #thought# #heroPersonal# could find a way to beat #villianName#.'
+        '#heroTitle# #thought# #heroPersonal# could #find# a #way# to #beat# #villianName#.'
       ],
       barely: [
-        '#heroName# wasn\'t #seduced# by #heroPossessive# idea, but it was #curious# idea.'
+        '#heroTitle# wasn\'t #seduced# by #heroPossessive# #dream#, but it was #curious#.'
       ]
     },
 
     evasions: {
       extreme: [
-        '#heroName# was #informed# of #villianName#\'s intentions and #perfectly# #evaded# the outcome.'
+        '#heroTitle# was #informed# of #villianName#\'s #intentions# and #perfectly# #evaded# the #outcomes3.'
       ],
       greater: [
-        '#heroName# felt #trapped# but #decently# #evaded# the worst of it.'
+        '#heroTitle# #felt# #trapped# but #decently# #evaded# the #worst# of the #scenario#.'
       ],
       normal: [
-        '#heroName# #evaded# the scenario.'
+        '#heroTitle# #evaded# the #scenario#.'
       ],
       lesser: [
-        '#heroName# #poorly# #evaded# #villianName#.'
+        '#heroTitle# #poorly# #evaded# #villianName#.'
       ],
       barely: [
-        '#villianName# #attacked# #heroName# and #heroObject# #barely# #evaded#.'
+        '#villianName# #attacked# #heroName# and #heroPersonal# #barely# #evaded#.'
       ]
     },
 
     mistakes: {
       extreme: [
-        '#heroName# #perfectly# #miscalculated# #villianName# to be more powerful than #villianPersonal# was.'
+        '#heroTitle# #perfectly# #miscalculated# #villianName# to be more #powerful# than #villianPersonal# was.'
       ],
       greater: [
-        '#heroName# #poorly# #thought#, #miserably# #acted#, and irreversibly #miscalculated#.'
+        '#heroTitle# #poorly# #thought#, #miserably# #acted#, and #miscalculated# #villianPossessive# #intentions#.'
       ],
       normal: [
-        '#heroName# #humorously# #miscalculated# a #vicious# situation as #calm#.'
+        '#heroTitle# #humorously# #miscalculated# a #vicious# #scenario# as #calm#.'
       ],
       lesser: [
-        '#heroName# #miscalculated#, but recoverd.'
+        '#heroTitle# #miscalculated#, but #recovered#.'
       ],
       barely: [
-        '#heroName# #miscalculated# slightly, but #acted# #decently#.'
+        '#heroTitle# #miscalculated# #slightly#, but #acted# #decently#.'
       ]
     },
 
     improvements: {
       extreme: [
-        '#heroName# #learned# everything.'
+        '#heroTitle# #learned# everything.'
       ],
       greater: [
-        '#heroName# #learned# many things.'
+        '#heroTitle# #learned# many things.'
       ],
       normal: [
-        '#heroName# #learned# some things.'
+        '#heroTitle# #learned# some things.'
       ],
       lesser: [
-        '#heroName# #learned# little.'
+        '#heroTitle# #learned# little.'
       ],
       barely: [
-        '#heroName# #learned# almost nothing.'
+        '#heroTitle# #learned# almost nothing.'
       ]
     }
   },

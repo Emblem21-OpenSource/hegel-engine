@@ -3,18 +3,7 @@ const epures = require('epures')
 const segments = require('./storySegments')
 
 const genders = Object.keys(segments.pronouns)
-
-const storyArcs = {
-  monsterHunt: ['#hopes# #failures# #retreats# #improvements# #triumphs#'],
-  ragsToRiches: ['#triumphs# #mistakes# #failures# #plots# #gripes# #triumphs# #improvements#'],
-  quest: [ '#hopes# #plots# #mistakes# #evasions# #retreats# #triumphs#' ],
-  voyageAndReturn: [ '#hopes# #plots# #mistakes# #evasions# #retreats# #improvements#' ],
-  comedy: [ '#failures# #retreats# #gripes# #evasions# #mistakes# #triumphs#' ],
-  tragedy: [ '#hopes# #plots# #improvements# #triumphs# #retreats# #failures#' ],
-  rebirth: [ '#failures# #retreats# #gripes# #evasions# #mistakes# #improvements# #triumphs#' ]
-}
-
-const arcs = Object.keys(storyArcs)
+const arcs = Object.keys(segments.arcs)
 
 class Story {
   constructor (sectors) {
@@ -56,6 +45,16 @@ class Story {
   }
 
   /**
+   * [assembleNames description]
+   * @param  {[type]} pronouns [description]
+   * @param  {[type]} name     [description]
+   * @return {[type]}          [description]
+   */
+  assembleNames (pronouns, name) {
+    return pronouns.concat([ name ]).map(name => name.charAt(0).toUpperCase() + name.slice(1))
+  }
+
+  /**
    * [getStory description]
    * @param  {[type]} heroName      [description]
    * @param  {[type]} heroGender    [description]
@@ -70,18 +69,20 @@ class Story {
 
     const grammarSource = Object.assign({
       heroName,
+      heroTitle: this.assembleNames(heroPronouns.personal, heroName),
       heroPersonal: heroPronouns.personal,
       heroObject: heroPronouns.object,
       heroPossessive: heroPronouns.possessive,
       heroIndependent: heroPronouns.independent,
       heroReflexive: heroPronouns.reflexive,
       villianName,
+      villianTitle: this.assembleNames(villianPronouns.personal, villianName),
       villianPersonal: villianPronouns.personal,
       villianObject: villianPronouns.object,
       villianPossessive: villianPronouns.possessive,
       villianIndependent: villianPronouns.independent,
       villianReflexive: villianPronouns.reflexive,
-      arc: storyArcs[arc]
+      arc: segments.arcs[arc]
     }, segments.words)
 
     for (const name in segments.types) {
@@ -91,7 +92,7 @@ class Story {
     }
 
     const story = epures.createGrammar(grammarSource)
-    // story.addModifiers(epures.modifiers.en_US)
+    story.addModifiers(epures.modifiers.en_US)
     return story.flatten('#arc#')
   }
 }
