@@ -2,7 +2,7 @@
   "name": "hegel-engine",
   "version": "1.0.0",
   "description": "Simulates the evolution of corruption for Universal Basic Income strategies.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/.bin/ava test.js"
   },
@@ -21,5 +21,9 @@
   "homepage": "https://github.com/Emblem21-OpenSource/HegelEngine-Engine#readme",
   "devDependencies": {
     "ava": "^1.4.1"
+  },
+  "dependencies": {
+    "epures": "^2.9.21",
+    "faker": "^4.1.0"
   }
 }
