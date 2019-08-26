@@ -19,7 +19,7 @@ module.exports = [
     new Faction('Dominant'),
     new Faction('Fringe')
   ]),
-  new Sector('Class', false, [
+  new Sector('Income', false, [
     new Faction('Upper'),
     new Faction('Middle'),
     new Faction('Lower')
@@ -124,5 +124,11 @@ module.exports = [
     new Faction('Organized'),
     new Faction('Unorganized'),
     new Faction('Unemployed')
+  ]),
+  new Sector('Education', false, [
+    new Faction('Master'),
+    new Faction('Graduated'),
+    new Faction('Enrolled'),
+    new Faction('No')
   ])
 ]

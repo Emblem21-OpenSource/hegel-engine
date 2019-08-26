@@ -82,7 +82,7 @@ module.exports = {
     decent: [ 'decent', 'good', 'correct', 'honest', 'proper', 'modest' ],
     poor: [ 'poor', 'bad', 'crude', 'inadequate', 'insufficient', 'feeble' ],
     miserable: [ 'miserable', 'terrible', 'dreadful', 'pathetic', 'tragic' ],
-    barely: [ 'barely', 'hardly', ],
+    barely: [ 'barely', 'hardly' ],
 
     curious: [ 'curious', 'strange', 'surprising', 'remarkable' ],
     vicious: [ 'vicious', 'brutal', 'malicious', 'cruel' ],
